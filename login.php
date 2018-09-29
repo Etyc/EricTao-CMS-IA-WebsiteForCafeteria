@@ -1,6 +1,6 @@
 <?php
  
-$link = mysqli_connect("localhost","qdhseri1","Yie26e0aV3","qdhseri1_mydatabase");
+$link = mysqli_connect("localhost","user","","test");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
@@ -29,14 +29,7 @@ $result = mysqli_query( $link, $sql);
             /*$loggedIn = true;*/
             echo "Account is Logedin";
 }
-
-
-$sql = "INSERT INTO account (Email, AccountName, Password) VALUES ('$_POST[Email]', '$_POST[AccountName]', '$_POST[Password]')" ;
-echo $sql;
-if (!mysqli_query($link, $sql)){
-    echo "inserting into database failed";/// add something to show that there was a problem
-}else{
 echo "<script>alert('Welcome to your account');history.go(-2)</script>";
-}
+
 
 ?>
